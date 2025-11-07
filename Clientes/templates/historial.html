@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historial de Vuelo - OpenSky</title>
+  <!-- CSS con url_for -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='historial.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>✈️ Historial de Vuelo - OpenSky Network</h1>
+    <a href="{{ url_for('inicio') }}" class="btn-back">⬅ Volver</a>
+  </header>
+
+  <main>
+    <form id="flightForm">
+      <label for="icao24">Código ICAO24:</label>
+      <input type="text" id="icao24" placeholder="Ejemplo: 3c6444" required />
+
+      <label for="start">Inicio (fecha y hora UTC):</label>
+      <input type="datetime-local" id="start" required />
+
+      <label for="end">Fin (fecha y hora UTC):</label>
+      <input type="datetime-local" id="end" required />
+
+      <button type="submit">Buscar historial</button>
+    </form>
+
+    <section id="results">
+      <h2>Resultados</h2>
+      <div id="output">Introduce los datos y presiona “Buscar historial”.</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Datos obtenidos de <a href="https://opensky-network.org" target="_blank">OpenSky Network</a></p>
+  </footer>
+
+  <!-- JS con url_for -->
+  <script src="{{ url_for('static', filename='historial.js') }}"></script>
+</body>
+</html>

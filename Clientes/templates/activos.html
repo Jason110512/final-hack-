@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✈️ Vuelos Activos - OpenSky Network</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='activos.css') }}">
+</head>
+<body>
+  <header>
+    <h1>✈️ Vuelos Activos (Tiempo Real)</h1>
+    <a href="{{ url_for('inicio') }}" class="btn-back">⬅ Volver</a>
+  </header>
+
+  <main>
+    <section class="info">
+      <p>Consulta en tiempo real los vuelos activos usando la API de <a href="https://opensky-network.org" target="_blank">OpenSky Network</a>.</p>
+      <button id="loadFlights">🔄 Cargar vuelos activos</button>
+    </section>
+
+    <section id="results">
+      <h2>Resultados:</h2>
+      <div id="output">Presiona “Cargar vuelos activos” para ver la información.</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Datos obtenidos de <a href="https://opensky-network.org" target="_blank">OpenSky Network</a></p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='activos.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌍 Tráfico Aéreo Global</title>
+
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="trafico.css" />
+</head>
+<body>
+  <header>
+    🌍 <b>Tráfico Aéreo Global</b> — Datos en Tiempo Real (OpenSky)
+  </header>
+
+  <div class="content">
+    <aside class="panel">
+      <h2>📊 Consultar Tráfico</h2>
+      <form id="trafficTrendForm">
+        <label for="zabbixUrl">URL de la API Zabbix:</label>
+        <input
+          type="text"
+          id="zabbixUrl"
+          value="https://TU-INSTANCIA-CLOUD/api_jsonrpc.php"
+          required
+        />
+
+        <label for="authToken">Token de Autenticación:</label>
+        <input
+          type="text"
+          id="authToken"
+          placeholder="Ingresa tu token (Auth ID)"
+          required
+        />
+
+        <label for="itemId">ID del Ítem (Métrica):</label>
+        <input
+          type="text"
+          id="itemId"
+          placeholder="Ejemplo: 23456 (Uso CPU o tráfico red)"
+          required
+        />
+
+        <label for="timeFrom">Inicio:</label>
+        <input type="datetime-local" id="timeFrom" required />
+
+        <label for="timeTill">Fin:</label>
+        <input type="datetime-local" id="timeTill" required />
+
+        <button type="submit">Consultar</button>
+      </form>
+
+      <div id="message"></div>
+
+      <div class="traffic-box">
+        <p><strong>Resumen Global</strong></p>
+        <ul>
+          <li>✈️ Total vuelos: <span id="total">0</span></li>
+          <li>🛫 En vuelo: <span id="enVuelo">0</span></li>
+          <li>🛬 En tierra: <span id="enTierra">0</span></li>
+          <li>⚡ Velocidad promedio: <span id="velProm">0</span> m/s</li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="map-container">
+      <div id="map"></div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="trafico.js"></script>
+  <script src="trafico_aereo.js"></script>
+</body>
+</html>

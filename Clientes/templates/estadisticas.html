@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📊 Estadísticas de Vuelo (Historial)</title>
+  <!-- CSS usando url_for -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='estadisticas.css') }}">
+</head>
+<body>
+  <header>
+    <h1>📊 Estadísticas de Vuelo - OpenSky Network</h1>
+    <a href="{{ url_for('inicio') }}" class="btn-back">⬅ Volver</a>
+  </header>
+
+  <main>
+    <form id="statsForm">
+      <label for="icao24">Código ICAO24 del avión:</label>
+      <input type="text" id="icao24" placeholder="Ejemplo: 3c6444" required>
+
+      <label for="start">Inicio (fecha y hora UTC):</label>
+      <input type="datetime-local" id="start" required>
+
+      <label for="end">Fin (fecha y hora UTC):</label>
+      <input type="datetime-local" id="end" required>
+
+      <button type="submit">Calcular estadísticas</button>
+    </form>
+
+    <div id="message"></div>
+
+    <section id="statsResult">
+      <h2>Resultados:</h2>
+      <p><strong>✈️ Número de vuelos:</strong> <span id="flightCount">---</span></p>
+      <p><strong>🕒 Duración promedio:</strong> <span id="averageDuration">---</span> minutos</p>
+      <p><strong>⏬ Duración mínima:</strong> <span id="minDuration">---</span> minutos</p>
+      <p><strong>⏫ Duración máxima:</strong> <span id="maxDuration">---</span> minutos</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Datos obtenidos de <a href="https://opensky-network.org" target="_blank">OpenSky Network</a></p>
+  </footer>
+
+  <!-- JS usando url_for -->
+  <script src="{{ url_for('static', filename='estadisticas.js') }}"></script>
+</body>
+</html>

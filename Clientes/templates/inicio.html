@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
+</head>
+<body>
+    <div class="inicio-container">
+        <header>
+            <h1>Bienvenido, {{ user }}!</h1>
+            <a href="{{ url_for('logout') }}" class="btn-logout">Cerrar sesión</a>
+        </header>
+
+        <main>
+            <p>Has iniciado sesión correctamente en el sistema bitStorm</p>
+
+            <div class="cards">
+           /   
+                <a href="{{ url_for('activos') }}" class="card">
+                    <h3>Vuelos Activos</h3>
+                    <p>Click aquí</p>
+                </a>
+
+              <a href="{{ url_for('estadisticas') }}" class="card">
+                    <h3>Estadísticas de los vuelos</h3>
+                    <p>Click aquí</p>
+                </a>
+                  <a href="{{ url_for('historial') }}" class="card">
+                    <h3>Historial de vuelos</h3>
+                    <p>Click aquí</p>
+                </a>
+                <a href="{{ url_for('trafico') }}" class="card">
+    <h3>Tráfico Aéreo Global</h3>
+    <p>Click aquí</p>
+</a>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>
