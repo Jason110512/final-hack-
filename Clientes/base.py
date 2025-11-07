@@ -14,7 +14,7 @@ CLIENT_ID = "jasonrojasyy@gmail.com-api-client"
 CLIENT_SECRET = "sGY7K31OEZ6IGjG12HJokkvk2P2Swahz"
 # Credenciales de PostgreSQL
 DB_HOST = "localhost"
-DB_NAME = "abbix_registro"
+DB_NAME = "zabbix_registro"
 DB_USER = "postgres"
 DB_PASS = "123456"
 
